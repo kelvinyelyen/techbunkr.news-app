@@ -1,26 +1,25 @@
 /*jshint esversion: 8*/
 // eslint-disable-next-line
-import React from 'react';
+import React, {Component} from 'react';
 
-
-const Post = (post) => {
-    const validUrl = post.match.params.url;
-    const postcard = (post) => {
-        if (validUrl === post.url) {
+const Post = (props) => {
+    const validUrl = this.props.match.params.url;
+    const postcard = () => {
+        if (validUrl === props.url) {
           return (
             <div>
-              <div class="card card-cascade wider reverse">
-                <div class="view view-cascade overlay">
-                  <img class="card-img-top" src={post.urlToImage} alt="Card image cap"/>
+              <div className="card card-cascade wider reverse">
+                <div className="view view-cascade overlay">
+                  <img className="card-img-top" src={props.urlToImage} alt="Card image cap"/>
                   <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
+                    <div className="mask rgba-white-slight"></div>
                   </a>
                 </div>
-                <div class="card-body card-body-cascade text-center">
-                  <h4 class="card-title"><strong>{post.title}</strong></h4>
-                  <h6 class="font-weight-bold indigo-text py-2">{post.author}</h6>
-                  <p class="card-text">{post.content}</p>
-                  <p><a class="px-2 fa-lg li-ic">Source:{post.author}</a></p>
+                <div className="card-body card-body-cascade text-center">
+                  <h4 className="card-title"><strong>{props.title}</strong></h4>
+                  <h6 className="font-weight-bold indigo-text py-2">{props.author}</h6>
+                  <p className="card-text">{props.content}</p>
+                  <p><a className="px-2 fa-lg li-ic">Source:{props.author}</a></p>
                 </div>
               </div>)
             </div>
@@ -30,15 +29,13 @@ const Post = (post) => {
         }
       };
 
-
     return (
-      <div class="container">
-          {console.log(post)}
+      <div className="container">
           {postcard}
       </div>
     );
-  };
 
+  };
 
 
 

@@ -1,7 +1,7 @@
 /*jshint esversion:6*/
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './Cards.css';
+import './tech.css';
 
 class Cards extends Component {
  constructor (props) {
@@ -36,30 +36,30 @@ fetch('https://newsapi.org/v2/top-headlines?' +
       post.map((post) => {
         return (
           <div>
-              <div class="container">
+              <div className="container">
                 <br/>
                 <br/>
-                <div class="blog-list clearfix">
-                    <div class="blog-box row">
-                        <div class="col-md-4">
-                            <div class="post-media">
+                <div className="blog-list clearfix">
+                    <div className="blog-box row">
+                        <div className="col-md-4">
+                            <div className="post-media">
                                 <Link to={`/Post/${post.url}`}>
                                   <a title="">
-                                      <img class="img-fluid" src={post.urlToImage} alt="Broken Image" />
-                                      <div class="hovereffect"></div>
+                                      <img className="img-fluid" src={post.urlToImage} alt="Broken Image" />
+                                      <div className="hovereffect"></div>
                                   </a>
                                 </Link>
                             </div>
                         </div>
-                        <div class="blog-meta big-meta col-md-8">
+                        <div className="blog-meta big-meta col-md-8">
                             <Link to={`/Post/${post.url}`}>
                                 <h4><a title="">{post.title}</a></h4>
                             </Link>
                             <p>{post.description}</p>
-                            <small class="firstsmall"><a class="bg-orange" title="">Tech</a></small>
+                            <small className="firstsmall"><a className="bg-orange" title="">Tech</a></small>
                             <small><a title="">{post.publishedAt}</a></small>
                             <small><a title=""> {post.author}</a></small>
-                            <small><a title=""><i class="fa fa-eye"></i> 1114</a></small>
+                            <small><a title=""><i className="fa fa-eye"></i> 1114</a></small>
                         </div>
                       </div>
                   </div>
@@ -70,13 +70,12 @@ fetch('https://newsapi.org/v2/top-headlines?' +
     )
 
     : (
-      <div class="center alert alert-primary">No post yet!</div>
+      <div className="center alert alert-primary">No post yet!</div>
     );
 
 
     return (
-      <div class="container">
-         <div class="">
+          <div>
             {postlist}
             <br/>
             <br/>
@@ -85,7 +84,6 @@ fetch('https://newsapi.org/v2/top-headlines?' +
             <br/>
          </div>
 
-      </div>
     );
   }
 }
